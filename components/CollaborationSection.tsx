@@ -47,7 +47,7 @@ export default function CollaborationSection() {
           </h2>
 
           <p className="text-xl md:text-2xl font-serif italic text-gray-300/90 max-w-md leading-relaxed">
-            Software & ML Infrastructure Engineer
+           Technical Writer, Software & ML Infrastructure Engineer
             <br />
             building high-performance AI systems
           </p>
@@ -131,12 +131,12 @@ export default function CollaborationSection() {
               href="mailto:hello@jacksteve.dev"
               className="inline-flex items-center gap-4 px-10 py-6 bg-gradient-to-r from-[#00FF41]/20 via-purple-800/30 to-purple-900/40 hover:from-[#00FF41]/30 hover:via-purple-700/40 hover:to-purple-800/50 text-white font-semibold text-xl rounded-full shadow-2xl shadow-purple-900/40 hover:shadow-[#00FF41]/30 transition-all duration-300 hover:scale-[1.03] border border-[#00FF41]/30 hover:border-[#00FF41]/60"
             >
-              Get in touch →
+              Get in touch 
               <span className="text-2xl">✉️</span>
             </a>
 
             <p className="mt-6 text-gray-300 font-medium tracking-wide font-serif italic">
-              hello@jacksteve.dev
+              js8671574@gmail.com
             </p>
           </motion.div>
         </div>

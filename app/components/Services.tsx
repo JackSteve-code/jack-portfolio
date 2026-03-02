@@ -30,9 +30,7 @@ export default function Services() {
     <section className="max-w-7xl mx-auto px-6 py-32">
       <div className="text-center mb-20">
         <span className="text-[#00FF41] font-mono text-sm tracking-widest">EXPERTISE</span>
-        <h2 className="text-5xl md:text-6xl font-black mt-4 mb-6 text-white">
-          THE <span className="text-[#00FF41]">SECRET SAUCE</span>
-        </h2>
+        <h2 className="text-5xl md:text-6xl font-black mt-4 mb-6 text-white"></h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
           Specialized in high-performance AI infrastructure and production ML systems
         </p>

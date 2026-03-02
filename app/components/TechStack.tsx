@@ -6,7 +6,7 @@ const stack = [
 export default function TechStack() {
   return (
     <section className="py-20 border-t border-zinc-800">
-      <p className="text-center text-sm tracking-[3px] text-zinc-500 mb-8">THE SECRET SAUCE</p>
+      
       <div className="flex flex-wrap justify-center gap-3">
         {stack.map((tech) => (
           <span

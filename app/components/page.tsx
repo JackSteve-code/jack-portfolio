@@ -1,22 +1,28 @@
-import Hero from './components/Hero';
-import TechStack from './components/TechStack';
-import Projects from './components/Projects';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import AboutSection from './components/AboutSection'; 
-import UsesSection from './components/UsesSection';
-import Guestbook from './components/Guestbook';
-import WorkSection from './components/WorkSection';   
+import Hero from './Hero';
+import TechStack from './TechStack';
+import Projects from './Projects';
+import Testimonials from './Testimonials';
+import Footer from './Footer';
+import Navbar from './Navbar';
+// Ensure these files actually exist in your app/components folder
+import AboutSection from './AboutSection'; 
+import UsesSection from './UsesSection';
+import Guestbook from './Guestbook';
+import WorkSection from './WorkSection';   
+
 export default function Home() {
   return (
-    <main className="bg-black text-white min-h-screen relative overflow-x-hidden">
+    <main className="bg-black text-white min-h-screen relative overflow-x-hidden selection:bg-white/30">
       {/* 1. Floating Navbar */}
       <Navbar />
 
-      {/* 2. Background Layer (Stars & Horizon) */}
+      {/* 2. Background Layer (Stars, Grid & Horizon) */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="stars-container">
+        {/* The Professional Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        {/* Star Container */}
+        <div className="stars-container absolute inset-0">
           {Array.from({ length: 90 }).map((_, i) => {
             const sizeClass =
               i % 5 === 0 ? 'star-large' :
@@ -41,19 +47,21 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. Content Layer */}
-      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 md:px-12 pt-32">
+      {/* 3. Content Layer - Max-width 4xl provides the 'Organized' look */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-20 space-y-32">
         <Hero />
         
         <AboutSection />
         
         <TechStack />
+        
         <Projects />
+        
         <Testimonials />
         
         <UsesSection />
         
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 my-16">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           <Guestbook />
           <WorkSection />
         </div>

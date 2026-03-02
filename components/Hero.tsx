@@ -10,13 +10,8 @@ export default function Hero() {
         Hello, I'm Jack Steve
       </h1>
 
-      <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4">
-        a Software & ML Infrastructure Engineer
-      </p>
-
-      <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-12">
-        High-Performance AI Infrastructure. Architecting production-grade LLMOps pipelines and distributed systems for the modern AI stack.
-      </p>
+      
+      
 
       <div className="flex flex-col sm:flex-row items-center gap-6">
         <button className="
@@ -24,11 +19,11 @@ export default function Hero() {
           hover:from-purple-500 hover:to-purple-700
           text-white font-medium rounded-full transition-all shadow-lg hover:shadow-purple-500/30
         ">
-          Let's Connect →
+          
         </button>
 
         <a href="mailto:hello@jacksteve.dev" className="text-purple-300 hover:text-purple-200 transition">
-          hello@jacksteve.dev
+          
         </a>
       </div>
     </div>

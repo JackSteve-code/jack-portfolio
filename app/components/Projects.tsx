@@ -1,5 +1,46 @@
 const projects = [
-  // ... (Keep your existing projects array exactly as it is)
+  // ... (Keep your existing projects array exactly as it is, except removing the AI blog one)
+
+  // Replace the removed AI blog with these two, in the same style/trend
+
+  {
+    title: "API Governance through Documentation",
+    subtitle: "Live Project",
+    description: "A comprehensive framework for modern API governance in 2026's polyglot, AI-augmented ecosystems. Documentation evolves from static reference to dynamic, enforceable infrastructure—serving as the single source of truth (SSOT) for contracts, styles, versioning, security, and lifecycle management. The approach integrates automated linting, schema validation, breaking-change detection, and observability to enforce standards across REST, GraphQL, gRPC, and event-driven services. Special emphasis is placed on AI-specific requirements to minimize hallucinations and ensure reliable agent consumption. Built to scale governance in complex microservices and AI-driven development environments with CI/CD automation and real-time metrics.",
+    bullets: [
+      "Five pillars: Contract, Style, Version, Security & Lifecycle Governance",
+      "Documentation as SSOT with OpenAPI/AsyncAPI/JSON Schema enforcement",
+      "Automated workflows, polyglot consistency & AI hallucination mitigation"
+    ],
+    tech: [
+      { name: "NEXT.JS", icon: "N" },
+      { name: "REACT", icon: "⚛️" },
+      { name: "TYPESCRIPT", icon: "TS" },
+      { name: "TAILWIND", icon: "🌬️" },
+      { name: "VERCEL", icon: "▲" }
+    ],
+    link: "https://jacksteve-code.github.io/MY-API-GOVERNANCE/"
+  },
+
+  {
+    title: "AI-First Documentation | AI Docs",
+    subtitle: "Live Project",
+    description: "A paradigm-shifting guide and framework for creating API documentation optimized for direct consumption by Large Language Models, autonomous agents, and AI copilots. Traditional human-centric docs lead to hallucinations, incorrect integrations, and production failures when ingested by AI systems. This work defines deterministic, schema-first, redundancy-heavy, example-centric structures using OpenAPI 3.1+ and JSON Schema to ensure reliable, unambiguous interpretation. It covers explicit typing, comprehensive error coverage, version pinning, deprecation clarity, and machine-parseable formatting to enable safe, high-fidelity code generation at scale in AI-driven development workflows.",
+    bullets: [
+      "Schema-first with OpenAPI/JSON Schema leading every section",
+      "Redundant, explicit constraints & 3–7 varied examples per endpoint",
+      "Deterministic language, full error coverage & AI hallucination prevention"
+    ],
+    tech: [
+      { name: "NEXT.JS", icon: "N" },
+      { name: "REACT", icon: "⚛️" },
+      { name: "TYPESCRIPT", icon: "TS" },
+      { name: "TAILWIND", icon: "🌬️" },
+      { name: "VERCEL", icon: "▲" }
+    ],
+    link: "https://jacksteve-code.github.io/MY-AI-WORKS/"
+  },
+
   {
     title: "Scalable LLMOps Pipeline",
     subtitle: "Live Project",
@@ -8,80 +49,7 @@ const projects = [
     tech: [{ name: "NEXT.JS", icon: "N" }, { name: "REACT", icon: "⚛️" }, { name: "TYPESCRIPT", icon: "TS" }, { name: "TAILWIND", icon: "🌬️" }, { name: "VERCEL", icon: "▲" }],
     link: "https://jacksteve-code.github.io/Scalable-llmop/"
   },
-  // ... (and all other projects)
+  // ... (and keep all your other remaining projects exactly as they were)
 ];
 
-export default function Projects() {
-  return (
-    <section className="py-24 px-6 md:px-12 bg-[#050505]">
-      <div className="max-w-4xl mx-auto">
-        {/* Header Section */}
-        <div className="mb-20">
-          <p className="text-indigo-500 tracking-[4px] text-[10px] mb-2 font-bold uppercase">Portfolio</p>
-          <h2 className="text-5xl md:text-6xl font-serif italic text-white leading-tight">
-            Selected <span className="text-indigo-600 not-italic font-sans font-bold text-6xl">Works</span>
-          </h2>
-        </div>
-
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <div key={index} className="group relative">
-              {/* Card Container */}
-              <div className="relative p-8 md:p-10 rounded-3xl bg-zinc-950 border border-zinc-900 transition-all duration-500 group-hover:border-indigo-500/30 group-hover:bg-zinc-900/20 shadow-2xl">
-                
-                {/* Indigo Accent Bar */}
-                <div className="w-12 h-[2px] bg-indigo-600 mb-8 group-hover:w-20 transition-all duration-500" />
-                
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
-                  <h3 className="text-4xl md:text-5xl font-serif italic text-white group-hover:text-indigo-400 transition-colors tracking-tight">
-                    {project.title}
-                  </h3>
-                  <span className="shrink-0 px-3 py-1 bg-indigo-950/30 border border-indigo-500/20 rounded-full text-[10px] tracking-widest text-indigo-400 font-bold uppercase self-start mt-2">
-                    {project.subtitle}
-                  </span>
-                </div>
-
-                <p className="text-zinc-400 text-lg leading-relaxed mb-10 max-w-3xl">
-                  {project.description}
-                </p>
-
-                {/* Glowing Purple/Indigo Bullets */}
-                <ul className="space-y-5 mb-12">
-                  {project.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-4 text-zinc-200 text-lg">
-                      <span className="text-indigo-500 shrink-0 mt-2 h-2 w-2 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
-                      <span className="group-hover:text-white transition-colors">{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Tech Stack Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tech.map((tech, i) => (
-                    <span key={i} className="flex items-center gap-2 px-3 py-1.5 bg-zinc-900 border border-white/5 rounded-md text-[10px] font-bold tracking-widest text-zinc-500 uppercase">
-                      {tech.icon} {tech.name}
-                    </span>
-                  ))}
-                </div>
-
-                {/* External Link Interaction */}
-                <div className="flex justify-end">
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="p-3 rounded-full bg-indigo-600 hover:bg-indigo-500 transform transition-all duration-300 hover:scale-110 hover:rotate-12 shadow-[0_0_20px_rgba(79,70,229,0.4)]"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                      <path d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+// The rest of your component (export default function Projects() { ... }) remains 100% unchanged

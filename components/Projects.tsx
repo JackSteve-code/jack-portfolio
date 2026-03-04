@@ -32,7 +32,7 @@ const projects = [
       "Model drift monitoring & retraining"
     ],
     tech: ["PYTHON", "PYTORCH", "SENTRY", "AUTH", "MARKDOWN"],
-    link: "https://jacksteve-code.github.io/Fraud-detector/"
+    link: "https://jacksteve-code.github.io/fraud-detector/"
   },
   {
     title: "Federated Learning Production Blueprint",
@@ -57,15 +57,26 @@ const projects = [
     link: "https://jacksteve-code.github.io/RNNS-to-transformers/"
   },
   {
-    title: "My AI Blog",
-    description: "A personal technical repository exploring AI infrastructure, LLMOps, and production ML systems. In-depth analysis of emerging tools, production blueprints, and challenges of distributed intelligent systems at scale.",
+    title: "Enterprise API Governance",
+    description: "A robust framework for managing API lifecycles with an emphasis on security, rate limiting, and automated documentation. Designed to ensure consistency and compliance across microservices in high-traffic environments.",
     bullets: [
-      "In-depth guides & production blueprints",
-      "Regular updates on emerging AI tools",
-      "Built with modern full-stack technologies"
+      "Automated lifecycle & policy enforcement",
+      "Secure gateway & traffic orchestration",
+      "Comprehensive compliance monitoring"
     ],
-    tech: ["NEXT.JS", "REACT", "SANITY", "TAILWIND", "MOTION"],
-    link: "https://jacksteve-code.github.io/my-ai-blog/"
+    tech: ["GO", "KAFKA", "POSTGRES", "DOCKER", "OAS"],
+    link: "https://jacksteve-code.github.io/MY-API-GOVERNANCE/"
+  },
+  {
+    title: "Advanced AI Works Portfolio",
+    description: "A curated collection of experimental and production-ready AI implementations, ranging from custom agentic workflows to optimized inference engines. This repository serves as a sandbox for cutting-edge architectural patterns.",
+    bullets: [
+      "Agentic workflow implementations",
+      "Advanced inference optimization patterns",
+      "Experimental AI architectural research"
+    ],
+    tech: ["PYTHON", "PYTORCH", "CUDA", "FASTAPI", "REDIS"],
+    link: "https://jacksteve-code.github.io/MY-AI-WORKS/"
   }
 ];
 

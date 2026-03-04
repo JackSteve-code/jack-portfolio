@@ -1,6 +1,6 @@
 import Hero from '@/components/Hero';
 import TechStack from '@/components/TechStack';
-import Projects from '@/components/Projects';
+
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import UsesSection from '@/components/UsesSection';
@@ -56,7 +56,7 @@ export default function Home() {
           
           
           <TechStack />
-          <Projects />
+          
           <Testimonials />
           
           {/* Polaroid / Interactive Sections */}

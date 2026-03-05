@@ -1,6 +1,6 @@
 import Hero from './Hero';
 import TechStack from './TechStack';
-import Projects from './Projects';
+import WorkSection from './WorkSection';
 import Testimonials from './Testimonials';
 import Footer from './Footer';
 import Navbar from './Navbar';
@@ -55,7 +55,7 @@ export default function Home() {
         
         <TechStack />
         
-        <Projects />
+        <WorkSection />
         
         <Testimonials />
         

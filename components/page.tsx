@@ -1,3 +1,5 @@
+"use client"; /
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import TechStack from '@/components/TechStack';
 import Hero from '@/components/Hero';
@@ -6,21 +8,33 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  const [stars, setStars] = useState<{left: string, top: string, delay: string}[]>([]);
+
+  useEffect(() => {
+    // Generate stars only on the client side to avoid hydration mismatch
+    const generatedStars = Array.from({ length: 90 }).map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 7}s`,
+    }));
+    setStars(generatedStars);
+  }, []);
+
   return (
     <main className="bg-black text-white min-h-screen relative overflow-x-hidden">
       <Navbar />
 
       {/* === Background Layer === */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="stars-container">
-          {Array.from({ length: 90 }).map((_, i) => (
+        <div className="stars-container relative w-full h-full">
+          {stars.map((star, i) => (
             <div
               key={i}
-              className={`star ${i % 5 === 0 ? 'star-large' : i % 3 === 0 ? 'star-medium' : 'star-small'}`}
+              className={`star absolute ${i % 5 === 0 ? 'star-large' : i % 3 === 0 ? 'star-medium' : 'star-small'}`}
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 7}s`,
+                left: star.left,
+                top: star.top,
+                animationDelay: star.delay,
               }}
             />
           ))}

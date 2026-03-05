@@ -8,7 +8,6 @@ import CollaborationSection from '@/components/CollaborationSection';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 
-
 export default function Home() {
   const [stars, setStars] = useState<{left: string, top: string, delay: string}[]>([]);
 

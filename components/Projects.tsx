@@ -1,6 +1,7 @@
 import React from 'react';
 
-const projects = [
+// Use a unique name for the data array to avoid any potential namespace clashes
+const PROJECT_LIST = [
   {
     title: "Scalable LLMOps Pipeline",
     description: "A production-grade architecture designed for deploying Large Language Models at scale while maintaining rigorous latency standards. The pipeline orchestrates model routing, intelligent caching, and comprehensive cost-optimization strategies across distributed GPU environments.",
@@ -93,7 +94,7 @@ export default function Projects() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {PROJECT_LIST.map((project, index) => (
             <div
               key={index}
               className="group relative rounded-3xl overflow-hidden border border-gray-800/60 hover:border-[#00FF41]/40 transition-all duration-400 bg-black/40 backdrop-blur-sm flex flex-col h-full"

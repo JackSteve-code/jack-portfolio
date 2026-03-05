@@ -73,6 +73,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="space-y-7 text-base md:text-lg leading-relaxed font-serif italic text-gray-200"
           >
+            <p>I am Jack, technical writer and a computer scientist. I grew up fishing with my father  on the shores of Lake Victoria.</p>
+            <p> My focus is on AI/ML in production. Previously, I  worked as a software engineer at a startup company. Exposure to the software development environment really sharpened my skills especially when it comes to algorithm, data structures and various problem solving techniques which later proved to be vital in deep learning more so during optimization. </p>
+
             <p>
               I design and build high-performance AI infrastructure — from massive-scale LLM serving to distributed training environments that run efficiently at enterprise level.
             </p>
@@ -82,8 +85,10 @@ export default function AboutPage() {
             </p>
 
             <p>
-              I also write technical documentation and deep-dive guides that turn complex engineering problems into clear, reproducible blueprints — so other engineers can build faster and more reliably.
+              I write technical documentation and in-depth guides that help make sense of complicated engineering challenges. My goal is to take something messy or hard to understand and turn it into a clear, step-by-step plan that others can actually follow. Whether it’s troubleshooting a tricky system or explaining how a piece of infrastructure works, I try to break it down in a way that saves other engineers time, frustration, and guesswork — so they can focus on building, not figuring out what went wrong.
             </p>
+
+            <p>I genuinely enjoy learning about fun technical challenges — the kind that make you stop and think, or push you to dig deeper into how something works. Whether it's figuring out why a system slowed down under load, untangling a weird bug that only happens in production, or designing a better way to handle data at scale, I love the process of solving those puzzles. But what makes it even better is doing it with great teams. There's something really rewarding about bouncing ideas around, learning from each other's perspectives, and building something together that none of us could have done alone. For me, the best part of engineering isn't just the code — it's the people you get to solve problems with along the way..</p>
 
             <p className="text-[#00FF41]/90 pt-3 text-lg">
               Clean code. Transparent systems. Production-first mindset.
@@ -97,4 +102,4 @@ export default function AboutPage() {
       </div>
     </section>
   );
-}
+}  

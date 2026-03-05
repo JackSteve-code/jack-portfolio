@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import TechStack from '@/components/TechStack';
 import Hero from '@/components/Hero';
-import ProjectsSection from '@/components/ProjectsSection';
+import WorkSection from '@/components/WorkSection';
 import CollaborationSection from '@/components/CollaborationSection';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
@@ -50,7 +50,7 @@ export default function Home() {
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <Hero />
         <TechStack />
-        <ProjectsSection />
+        <WorkSection />
         <CollaborationSection/>
         <Testimonials />
         <Footer />

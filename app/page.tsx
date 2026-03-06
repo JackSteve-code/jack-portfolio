@@ -1,6 +1,8 @@
 "use client"; // Add this at the very top!
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
+import AboutSection from '@/components/AboutSection';
+import Services from '@/components/Services';
 import TechStack from '@/components/TechStack';
 import Hero from '@/components/Hero';
 import WorkSection from '@/components/WorkSection';
@@ -48,11 +50,13 @@ export default function Home() {
       {/* === Main Content === */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <Hero />
+        <AboutSection/>
+        <Services />
         <TechStack />
         <WorkSection />
         <CollaborationSection/>
         <Testimonials />
-        <Footer />
+        <Footer />n
       </div>
     </main>
   );

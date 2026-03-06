@@ -11,7 +11,7 @@ export default function About() {
       </div>
 
       <div className="max-w-2xl mx-auto text-lg text-zinc-400 leading-relaxed text-center italic">
-        I'm Jack Steve, a technical writer and proactive AI infrastructure engineer 
+        A technical writer and proactive AI infrastructure engineer 
         passionate about building <span className="text-emerald-400/80 font-medium">production-grade LLM serving systems</span>. 
         From vLLM on distributed clusters to compliance-ready federated learning 
         frameworks, I thrive on turning complex AI challenges into clean, scalable solutions.

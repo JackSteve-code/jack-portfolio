@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import AboutSection from '@/components/AboutSection';
 import Services from '@/components/Services';
 import TechStack from '@/components/TechStack';
+import Software from '@/components/Software';
 import Hero from '@/components/Hero';
 import WorkSection from '@/components/WorkSection';
 import CollaborationSection from '@/components/CollaborationSection';
@@ -54,6 +55,7 @@ export default function Home() {
         <Services />
         <TechStack />
         <WorkSection />
+        <Software />
         <CollaborationSection/>
         <Testimonials />
         <Footer />n

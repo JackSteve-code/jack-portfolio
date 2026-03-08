@@ -1,3 +1,11 @@
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  bullets: string[];
+  // add other fields if you have them, like 'link' or 'image'
+}
+
 import React from 'react';
 
 const SELECTED_WORKS = [
@@ -163,7 +171,7 @@ export default function Projects() {
             </p>
 
             <ul className="space-y-3 mb-8 flex-grow">
-              {project.bullets.map((bullet, i) => (
+              {project.bullets.map((bullet: string, i: number) => (
                 <li key={i} className="flex items-start gap-3 text-gray-400 text-sm">
                   <span className="text-[#00FF41] mt-1">›</span>
                   <span className="font-serif italic">{bullet}</span>
@@ -172,7 +180,7 @@ export default function Projects() {
             </ul>
 
             <div className="flex flex-wrap gap-2 mb-6">
-              {project.tech.map((tech, i) => (
+             {project.tech.map((tech: string, i: number) => (
                 <span
                   key={i}
                   className="text-[10px] px-2 py-1 bg-gray-900/80 rounded-full text-gray-300 border border-gray-700 font-mono uppercase tracking-wider"

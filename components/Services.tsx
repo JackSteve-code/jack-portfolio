@@ -22,54 +22,65 @@ const solutions = [
 export default function Services() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-32 font-serif">
-      <div className="space-y-12">
+      <div className="space-y-16">
         
         {/* Pain Points Section: "This you?" */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-card p-10 rounded-[2rem] border border-gray-800/50 bg-white/5"
+          className="group relative"
         >
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-3xl">🤔</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white italic">This you?</h2>
-          </div>
+          {/* === INTENSIFIED RED BACKBURST === */}
+          <div className="absolute -inset-4 bg-gradient-to-br from-red-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.5rem] blur-3xl z-0 scale-95 group-hover:scale-100 transition-transform" />
           
-          <ul className="grid grid-cols-1 md:grid-cols-1 gap-6">
-            {painPoints.map((point, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="text-red-500 font-bold mt-1">✕</span>
-                <p className="text-gray-300 text-lg leading-relaxed italic">
-                  {point}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <div className="relative glass-card p-10 rounded-[2rem] border border-gray-800/50 bg-black/40 backdrop-blur-xl z-10 hover:border-red-500/50 transition-all duration-300">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-3xl">🤔</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white italic uppercase tracking-tight">This you?</h2>
+            </div>
+            
+            <ul className="space-y-6">
+              {painPoints.map((point, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className="text-red-500 font-bold mt-1 text-xl">✕</span>
+                  <p className="text-gray-300 text-lg md:text-xl leading-relaxed italic">
+                    {point}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
         {/* Solutions Section: "How I can help" */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="glass-card p-10 rounded-[2rem] border border-[#00FF41]/20 bg-[#00FF41]/5"
+          className="group relative"
         >
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-3xl md:text-4xl font-black text-white italic">How I can help</h2>
-          </div>
+          {/* === INTENSIFIED GREEN BACKBURST === */}
+          <div className="absolute -inset-4 bg-gradient-to-br from-[#00FF41]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.5rem] blur-3xl z-0 scale-95 group-hover:scale-100 transition-transform" />
           
-          <ul className="grid grid-cols-1 md:grid-cols-1 gap-6">
-            {solutions.map((solution, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="text-[#00FF41] font-bold mt-1">✓</span>
-                <p className="text-gray-200 text-lg leading-relaxed italic">
-                  {solution}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <div className="relative glass-card p-10 rounded-[2rem] border border-[#00FF41]/20 bg-black/40 backdrop-blur-xl z-10 hover:border-[#00FF41]/60 transition-all duration-300">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-3xl">💡</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white italic uppercase tracking-tight">How I can help</h2>
+            </div>
+            
+            <ul className="space-y-6">
+              {solutions.map((solution, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className="text-[#00FF41] font-bold mt-1 text-xl">✓</span>
+                  <p className="text-gray-200 text-lg md:text-xl leading-relaxed italic">
+                    {solution}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
       </div>

@@ -1,77 +1,77 @@
 'use client';
 import { motion } from 'framer-motion';
 
-const services = [
-  {
-    id: "01",
-    title: "Scalable LLM Serving",
-    desc: "Optimizing inference with vLLM, quantization, and continuous batching to slash latencies by 35%+ while reducing costs.",
-    tags: ["vLLM", "Quantization", "Continuous Batching"],
-    color: "from-green-500/20"
-  },
-  {
-    id: "02",
-    title: "Distributed Training",
-    desc: "Hardware-aware parallelism strategies for massive clusters achieving 40% faster training times.",
-    tags: ["FSDP", "DeepSpeed", "Multi-GPU"],
-    color: "from-blue-500/20"
-  },
-  {
-    id: "03",
-    title: "MLOps Infrastructure",
-    desc: "End-to-end LLMOps pipelines with experiment tracking, model registry, and automated deployment.",
-    tags: ["Kubeflow", "MLflow", "Kubernetes"],
-    color: "from-purple-500/20"
-  }
+const painPoints = [
+  "Your LLM infrastructure costs are spiraling due to unoptimized inference and high GPU idle times.",
+  "Your engineering team is drowning in technical debt because your system documentation is outdated or fragmented.",
+  "You're struggling with high latencies that degrade the user experience of your production AI features.",
+  "Your distributed systems face reliability issues and you lack a clear observability strategy to lower MTTR.",
+  "You want to implement green computing and carbon-aware engineering but don't have the profiling tools in place.",
+  "You're building complex technical products but lack content that actually earns the trust of a senior engineering audience."
+];
+
+const solutions = [
+  "I optimize inference using vLLM, quantization, and continuous batching to slash latencies and compute costs.",
+  "I implement 'Docs-as-Code' workflows using Docusaurus and Git so your documentation is as resilient as your code.",
+  "I architect fault-tolerant distributed systems using consensus protocols like Raft to ensure 99.9% uptime.",
+  "I build end-to-end LLMOps pipelines that bridge the gap between experimental notebooks and stable production APIs.",
+  "I utilize eBPF-based power profiling to help your team achieve sustainable, energy-efficient software orchestration.",
+  "I write deep-dive technical surveys and architectural guides that turn complex systems into clear, actionable knowledge."
 ];
 
 export default function Services() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-32">
-      <div className="text-center mb-20">
-        <span className="text-[#00FF41] font-mono text-sm tracking-widest">EXPERTISE</span>
-        <h2 className="text-5xl md:text-6xl font-serif italic font-black mt-4 mb-6 text-white">
-           
-        </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto font-serif italic">
-          Specialized in high-performance AI infrastructure and production ML systems
-        </p>
-      </div>
+    <section className="max-w-5xl mx-auto px-6 py-32 font-serif">
+      <div className="space-y-12">
+        
+        {/* Pain Points Section: "This you?" */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-card p-10 rounded-[2rem] border border-gray-800/50 bg-white/5"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-3xl">🤔</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white italic">This you?</h2>
+          </div>
+          
+          <ul className="grid grid-cols-1 md:grid-cols-1 gap-6">
+            {painPoints.map((point, i) => (
+              <li key={i} className="flex items-start gap-4">
+                <span className="text-red-500 font-bold mt-1">✕</span>
+                <p className="text-gray-300 text-lg leading-relaxed italic">
+                  {point}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {services.map((service, index) => (
-          <motion.div
-            key={service.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="group relative"
-          >
-            {/* Gradient background */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${service.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl`} />
-            
-            {/* Card */}
-            <div className="relative glass-card p-8 rounded-3xl h-full border border-gray-800/50 hover:border-[#00FF41]/30 transition-all duration-300">
-              <div className="text-[#00FF41] font-mono text-7xl font-black mb-6 opacity-20 group-hover:opacity-40 transition-opacity">
-                {service.id}
-              </div>
-              <h3 className="text-2xl font-serif italic font-bold mb-4 group-hover:text-[#00FF41] transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed font-serif italic">
-                {service.desc}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span key={tag} className="text-xs px-3 py-1 bg-gray-900 rounded-full text-gray-300 border border-gray-800 font-serif italic">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        ))}
+        {/* Solutions Section: "How I can help" */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="glass-card p-10 rounded-[2rem] border border-[#00FF41]/20 bg-[#00FF41]/5"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="text-3xl md:text-4xl font-black text-white italic">How I can help</h2>
+          </div>
+          
+          <ul className="grid grid-cols-1 md:grid-cols-1 gap-6">
+            {solutions.map((solution, i) => (
+              <li key={i} className="flex items-start gap-4">
+                <span className="text-[#00FF41] font-bold mt-1">✓</span>
+                <p className="text-gray-200 text-lg leading-relaxed italic">
+                  {solution}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
       </div>
     </section>
   );

@@ -3,12 +3,12 @@ interface Project {
   description: string;
   tech: string[];
   bullets: string[];
-  // add other fields if you have them, like 'link' or 'image'
+  link: string;
 }
 
 import React from 'react';
 
-const SELECTED_WORKS = [
+const SELECTED_WORKS: Project[] = [
   {
     title: "Scalable LLMOps Pipeline",
     description: "A production-grade architecture designed for deploying Large Language Models at scale while maintaining rigorous latency standards. The pipeline orchestrates model routing, intelligent caching, and comprehensive cost-optimization strategies across distributed GPU environments.",
@@ -83,7 +83,7 @@ const SELECTED_WORKS = [
   }
 ];
 
-const DOCS_LIST = [
+const DOCS_LIST: Project[] = [
   {
     title: "The Reliability Crisis of Planetary-Scale Systems",
     description: "A deep technical exploration of reliability challenges in multi-cloud, planetary-scale distributed systems. It covers failure modes, limitations of chaos engineering, and the application of formal verification to mathematically prove safety, liveness, and fault tolerance under adversarial conditions.",
@@ -147,7 +147,7 @@ const DOCS_LIST = [
 ];
 
 export default function Projects() {
-  const ProjectGrid = ({ projects }: { projects: any[] }) => (
+  const ProjectGrid = ({ projects }: { projects: Project[] }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
       {projects.map((project, index) => (
         <div
@@ -180,7 +180,7 @@ export default function Projects() {
             </ul>
 
             <div className="flex flex-wrap gap-2 mb-6">
-             {project.tech.map((tech: string, i: number) => (
+              {project.tech.map((tech: string, i: number) => (
                 <span
                   key={i}
                   className="text-[10px] px-2 py-1 bg-gray-900/80 rounded-full text-gray-300 border border-gray-700 font-mono uppercase tracking-wider"
@@ -211,8 +211,6 @@ export default function Projects() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-24">
-          <span className="text-gray-400 font-serif italic text-lg opacity-80 tracking-widest">
-          </span>
           <h2 className="text-5xl md:text-6xl font-serif italic font-black mt-5 mb-4 text-white">
             <span className="text-[#00FF41]">A Selected Works</span> 
           </h2>

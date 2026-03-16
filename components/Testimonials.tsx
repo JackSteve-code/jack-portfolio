@@ -1,7 +1,33 @@
-// components/Testimonials.tsx
 'use client';
 
 import { motion } from 'framer-motion';
+
+const processSteps = [
+  {
+    id: "01",
+    title: "Audit & Scoping",
+    desc: "I begin by identifying bottlenecks in your current ML infrastructure, documentation gaps, or high-latency pain points in your production pipelines.",
+    color: "from-blue-500/20"
+  },
+  {
+    id: "02",
+    title: "Architectural Blueprint",
+    desc: "I design a resilient system—whether it’s a multi-GPU training strategy, a federated learning framework, or a 'Docs-as-Code' ecosystem for your team.",
+    color: "from-[#00FF41]/20"
+  },
+  {
+    id: "03",
+    title: "Production Engineering",
+    desc: "The core build. I develop the infrastructure using vLLM, Kubernetes, and Python, ensuring every component is optimized for speed and cost-efficiency.",
+    color: "from-purple-500/20"
+  },
+  {
+    id: "04",
+    title: "Docs & Observability",
+    desc: "I deliver production-grade technical documentation and ODD dashboards, ensuring your team can manage and scale the system long after handover.",
+    color: "from-emerald-500/20"
+  }
+];
 
 const testimonials = [
   {
@@ -21,54 +47,91 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+export default function WorkHistory() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-32">
-      <div className="text-center mb-20">
-        <span className="text-[#00FF41] font-mono text-sm tracking-widest uppercase">TESTIMONIALS</span>
-        <h2 className="text-5xl md:text-6xl font-serif italic font-black mt-4 mb-6 text-white">
-          WHAT <span className="text-[#00FF41]">THEY SAY</span>
-        </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto font-serif italic">
-          Feedback from collaborators and clients who’ve worked with me on production AI systems
-        </p>
-      </div>
+    <div className="bg-black text-white">
+      {/* PROCESS SECTION */}
+      <section className="max-w-7xl mx-auto px-6 py-32">
+        <div className="mb-20 text-left">
+          <span className="text-[#00FF41] font-mono text-sm tracking-widest uppercase">WORKFLOW</span>
+          <h2 className="text-3xl md:text-4xl font-serif italic font-black mt-4 mb-6 text-white uppercase">
+            Simple, <span className="text-[#00FF41]">Transparent</span> Process
+          </h2>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <motion.div
-            key={testimonial.name}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="group relative"
-          >
-            {/* Subtle green + purple hover glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00FF41]/15 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl" />
-
-            {/* Card */}
-            <div className="relative glass-card p-8 rounded-3xl h-full border border-gray-800/50 hover:border-[#00FF41]/40 transition-all duration-300 bg-black/40 backdrop-blur-md flex flex-col">
-              <div className="text-[#00FF41] font-mono text-7xl font-black opacity-20 group-hover:opacity-50 transition-opacity mb-6">
-                {String(index + 1).padStart(2, '0')}
-              </div>
-
-              <blockquote className="text-gray-200 text-base leading-relaxed mb-6 font-serif italic font-light flex-grow">
-                “{testimonial.quote}”
-              </blockquote>
-
-              <div className="mt-auto">
-                <p className="text-white font-semibold text-lg font-serif italic">
-                  {testimonial.name}
-                </p>
-                <p className="text-gray-400 text-sm font-serif italic">
-                  {testimonial.role}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {processSteps.map((step, index) => (
+            <motion.div
+              key={step.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${step.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl`} />
+              <div className="relative glass-card p-8 rounded-3xl h-full border border-gray-800/50 bg-black/40 backdrop-blur-md flex flex-col">
+                <div className="text-blue-500 font-mono text-6xl font-black mb-6">
+                  {step.id}
+                </div>
+                <h3 className="text-white text-xl font-serif font-bold mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-gray-400 text-base leading-relaxed font-serif italic font-light">
+                  {step.desc}
                 </p>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <section className="max-w-7xl mx-auto px-6 py-32 border-t border-gray-900">
+        <div className="text-center mb-20">
+          <span className="text-[#00FF41] font-mono text-sm tracking-widest uppercase">TESTIMONIALS</span>
+          <h2 className="text-3xl md:text-4xl font-serif italic font-black mt-4 mb-6 text-white uppercase">
+            WHAT <span className="text-[#00FF41]">THEY SAY</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto font-serif italic">
+            Feedback from collaborators and clients who’ve worked with me on production AI systems
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00FF41]/15 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl" />
+
+              <div className="relative glass-card p-8 rounded-3xl h-full border border-gray-800/50 hover:border-[#00FF41]/40 transition-all duration-300 bg-black/40 backdrop-blur-md flex flex-col">
+                <div className="text-[#00FF41] font-mono text-7xl font-black opacity-20 group-hover:opacity-50 transition-opacity mb-6">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+
+                <blockquote className="text-gray-200 text-base leading-relaxed mb-6 font-serif italic font-light flex-grow">
+                  “{testimonial.quote}”
+                </blockquote>
+
+                <div className="mt-auto">
+                  <p className="text-white font-semibold text-lg font-serif italic">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-gray-400 text-sm font-serif italic">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

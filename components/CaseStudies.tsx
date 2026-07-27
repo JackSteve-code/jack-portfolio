@@ -19,7 +19,7 @@ const studies = [
     link: "https://jacksteve-code.github.io/AI-Infrastructure-and-compute-optimization/",
     repo: "https://github.com/JackSteve-code/AI-Infrastructure-and-compute-optimization"
   },
-  // Add the other 5 projects the same way (03 to 07) — I can send the full list if you want
+  
 ];
 
 export default function CaseStudies() {

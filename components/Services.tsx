@@ -21,30 +21,32 @@ const solutions = [
 
 export default function Services() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-32 font-serif">
-      <div className="space-y-16">
+    <section className="max-w-7xl mx-auto px-6 py-32 font-serif">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        {/* Pain Points Section: "This you?" */}
+        {/* Pain Points Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="group relative"
+          className="group relative h-full"
         >
-          {/* === INTENSIFIED RED BACKBURST === */}
           <div className="absolute -inset-4 bg-gradient-to-br from-red-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.5rem] blur-3xl z-0 scale-95 group-hover:scale-100 transition-transform" />
           
-          <div className="relative glass-card p-10 rounded-[2rem] border border-gray-800/50 bg-black/40 backdrop-blur-xl z-10 hover:border-red-500/50 transition-all duration-300">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="text-3xl">🤔</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white italic uppercase tracking-tight">This you?</h2>
+          <div className="relative glass-card p-8 rounded-[2rem] border border-gray-800/50 bg-black/40 backdrop-blur-xl z-10 hover:border-red-500/50 transition-all duration-300 h-full flex flex-col">
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-normal text-white italic tracking-tight leading-tight">
+                Are These<br />
+                <span className="text-red-500 font-semibold">Bottlenecks</span><br />
+                Slowing You?
+              </h2>
             </div>
             
-            <ul className="space-y-6">
+            <ul className="space-y-4 flex-1 flex flex-col justify-around">
               {painPoints.map((point, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="text-red-500 font-bold mt-1 text-xl">✕</span>
-                  <p className="text-gray-300 text-lg md:text-xl leading-relaxed italic">
+                  <span className="text-red-500 font-bold mt-1 text-sm">›</span>
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed italic">
                     {point}
                   </p>
                 </li>
@@ -53,28 +55,30 @@ export default function Services() {
           </div>
         </motion.div>
 
-        {/* Solutions Section: "How I can help" */}
+        {/* Solutions Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="group relative"
+          className="group relative h-full"
         >
-          {/* === INTENSIFIED GREEN BACKBURST === */}
           <div className="absolute -inset-4 bg-gradient-to-br from-[#00FF41]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.5rem] blur-3xl z-0 scale-95 group-hover:scale-100 transition-transform" />
           
-          <div className="relative glass-card p-10 rounded-[2rem] border border-[#00FF41]/20 bg-black/40 backdrop-blur-xl z-10 hover:border-[#00FF41]/60 transition-all duration-300">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="text-3xl">💡</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white italic uppercase tracking-tight">How I can help</h2>
+          <div className="relative glass-card p-8 rounded-[2rem] border border-[#00FF41]/20 bg-black/40 backdrop-blur-xl z-10 hover:border-[#00FF41]/60 transition-all duration-300 h-full flex flex-col">
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-normal text-white italic tracking-tight leading-tight">
+                Strategic<br />
+                <span className="text-[#00FF41] font-semibold">Engineering</span><br />
+                Solutions
+              </h2>
             </div>
             
-            <ul className="space-y-6">
+            <ul className="space-y-4 flex-1 flex flex-col justify-around">
               {solutions.map((solution, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="text-[#00FF41] font-bold mt-1 text-xl">✓</span>
-                  <p className="text-gray-200 text-lg md:text-xl leading-relaxed italic">
+                  <span className="text-[#00FF41] font-bold mt-1 text-sm">›</span>
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed italic">
                     {solution}
                   </p>
                 </li>

@@ -49,7 +49,8 @@ const skillsGroups = [
 
 const secondaryStack = [
   "LangChain", "FSDP", "DeepSpeed", "OpenTelemetry", 
-  "eBPF", "React", "Tailwind CSS", "PostgreSQL", "Redis", "Kafka"
+  "eBPF", "React", "Tailwind CSS", "PostgreSQL", "Redis", "Kafka",
+  "Docker Compose", "GraphQL", "TensorRT", "LlamaIndex", "Pinecone"
 ];
 
 export default function TechStack() {
@@ -60,11 +61,11 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="text-[#00FF41] font-mono text-sm tracking-widest uppercase">Expertise</span>
-          <h2 className="text-3xl md:text-4xl font-serif italic font-black mt-4 mb-3 text-white uppercase">
+          <h2 className="text-2xl md:text-3xl font-serif italic font-black mt-4 mb-3 text-white uppercase">
             Core <span className="text-[#00FF41]">Competencies</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto font-serif italic text-base">
-            A six-point breakdown of my technical proficiency across AI, systems, and communication.
+            A comprehensive breakdown of my technical proficiency across AI infrastructure, distributed systems, and technical communication.
           </p>
         </div>
 
@@ -108,8 +109,11 @@ export default function TechStack() {
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ duration: 1.2, delay: 0.6 + (groupIdx * 0.1) }}
                           viewport={{ once: true }}
-                          className="h-full bg-gradient-to-r from-[#00FF41] to-emerald-500 shadow-[0_0_20px_rgba(0,255,65,0.6)]"
-                        />
+                          className="h-full bg-gradient-to-r from-[#00FF41] to-emerald-500 shadow-[0_0_20px_rgba(0,255,65,0.6)] relative"
+                        >
+                          {/* Green glowing dot at the tip of the progress bar */}
+                          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#00FF41] rounded-full shadow-[0_0_8px_#00FF41]" />
+                        </motion.div>
                       </div>
                     </div>
                   ))}
@@ -121,7 +125,7 @@ export default function TechStack() {
 
         <div className="text-center">
           <h4 className="text-sm font-mono text-gray-600 uppercase tracking-widest mb-10 italic">
-             Additional Tools & Paradigms
+              Additional Tools & Paradigms
           </h4>
           <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
             {secondaryStack.map((tech, index) => (

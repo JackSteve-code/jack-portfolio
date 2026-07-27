@@ -1,3 +1,4 @@
+
 interface Project {
   title: string;
   description: string;
@@ -133,16 +134,16 @@ const DOCS_LIST: Project[] = [
     link: "https://jacksteve-code.github.io/GREEN-COMPUTING/"
   },
   {
-    title: "Formal Verification & Runtime Assurance for Distributed Correctness",
-    description: "Technical repository on ensuring correctness in distributed systems through hybrid formal verification and runtime techniques. Covers consensus protocol proofs, eventual consistency, and low-overhead production monitoring to eliminate subtle bugs.",
+    title: "Production LLM Observability & Tracing Architecture",
+    description: "Comprehensive engineering guide to tracing, debugging, and monitoring complex LLM applications in production. Focuses on capturing end-to-end token metrics, latency tracking, semantic caching performance, and automated quality evaluations to ensure predictable model behavior at scale.",
     bullets: [
-      "Lead Developer: Developed hybrid verification strategies and runtime checks",
-      "TLA+/Alloy/Isabelle mechanized proofs for Raft/Paxos/CRDTs",
-      "eBPF trace monitoring for invariant enforcement in production",
-      "Addresses state explosion via modular + runtime progressive assurance"
+      "Lead Developer: Architected tracing workflows and performance monitoring layers",
+      "Real-time token latency tracking and cost attribution metrics",
+      "Semantic caching validation and automated guardrail evaluation",
+      "Deep integration with OpenTelemetry and modern observability stacks"
     ],
-    tech: ["TLA+", "ALLOY", "ISABELLE", "EBPF", "RUST"],
-    link: "https://jacksteve-code.github.io/distributed-dos/"
+    tech: ["OPENTELEMETRY", "LANGFUSE", "PYTHON", "PROMETHEUS", "GRAFANA"],
+    link: "https://jacksteve-code.github.io/LLM-Observability/"
   }
 ];
 
@@ -240,3 +241,4 @@ export default function Projects() {
     </section>
   );
 }
+

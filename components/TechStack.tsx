@@ -6,7 +6,6 @@ const skillsGroups = [
   {
     category: "AI Infrastructure & MLOps",
     icon: "🧠",
-    // === INTENSIFIED HOVER COLOR ===
     hoverColor: "from-[#00FF41]/60", 
     skills: [
       { name: "PyTorch / vLLM", level: 95 },
@@ -20,7 +19,6 @@ const skillsGroups = [
   {
     category: "Systems Engineering",
     icon: "⚙️",
-    // === INTENSIFIED HOVER COLOR ===
     hoverColor: "from-blue-600/60",
     skills: [
       { name: "Kubernetes / Docker", level: 93 },
@@ -34,7 +32,6 @@ const skillsGroups = [
   {
     category: "Technical Communication",
     icon: "✍️",
-    // === INTENSIFIED HOVER COLOR ===
     hoverColor: "from-purple-600/60",
     skills: [
       { name: "Docs-as-Code", level: 96 },
@@ -48,9 +45,21 @@ const skillsGroups = [
 ];
 
 const secondaryStack = [
-  "LangChain", "FSDP", "DeepSpeed", "OpenTelemetry", 
-  "eBPF", "React", "Tailwind CSS", "PostgreSQL", "Redis", "Kafka",
-  "Docker Compose", "GraphQL", "TensorRT", "LlamaIndex", "Pinecone"
+  { name: "LangChain", icon: "🔗", category: "Orchestration" },
+  { name: "FSDP", icon: "⚡", category: "Training" },
+  { name: "DeepSpeed", icon: "🚀", category: "Optimization" },
+  { name: "OpenTelemetry", icon: "📊", category: "Observability" },
+  { name: "eBPF", icon: "🔍", category: "Kernel Trace" },
+  { name: "React", icon: "⚛️", category: "Frontend" },
+  { name: "Tailwind CSS", icon: "🎨", category: "Styling" },
+  { name: "PostgreSQL", icon: "🐘", category: "Database" },
+  { name: "Redis", icon: "⚡", category: "Caching" },
+  { name: "Kafka", icon: "📨", category: "Streaming" },
+  { name: "Docker Compose", icon: "🐳", category: "Containers" },
+  { name: "GraphQL", icon: "🛜", category: "API" },
+  { name: "TensorRT", icon: "🏎️", category: "Inference" },
+  { name: "LlamaIndex", icon: "📚", category: "Retrieval" },
+  { name: "Pinecone", icon: "🌲", category: "Vector DB" }
 ];
 
 export default function TechStack() {
@@ -79,10 +88,8 @@ export default function TechStack() {
               viewport={{ once: true }}
               className="group relative"
             >
-              {/* === INTENSIFIED BACKBURST EFFECT (More noticeable when hovering) === */}
               <div className={`absolute -inset-4 bg-gradient-to-br ${group.hoverColor} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2rem] blur-2xl z-0 scale-95 group-hover:scale-100 transition-transform`} />
 
-              {/* Card Container */}
               <div className="relative glass-card p-10 rounded-3xl border border-gray-800/50 bg-black/40 backdrop-blur-xl z-10 h-full flex flex-col hover:border-[#00FF41]/70 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-10">
                   <span className="text-3xl">{group.icon}</span>
@@ -95,7 +102,6 @@ export default function TechStack() {
                   {group.skills.map((skill) => (
                     <div key={skill.name}>
                       <div className="flex justify-between mb-3">
-                        {/* Word size increased to text-base and text-lg for readability */}
                         <span className="text-gray-200 font-serif italic text-base md:text-lg">
                           {skill.name}
                         </span>
@@ -111,7 +117,6 @@ export default function TechStack() {
                           viewport={{ once: true }}
                           className="h-full bg-gradient-to-r from-[#00FF41] to-emerald-500 shadow-[0_0_20px_rgba(0,255,65,0.6)] relative"
                         >
-                          {/* Green glowing dot at the tip of the progress bar */}
                           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#00FF41] rounded-full shadow-[0_0_8px_#00FF41]" />
                         </motion.div>
                       </div>
@@ -124,21 +129,31 @@ export default function TechStack() {
         </div>
 
         <div className="text-center">
-          <h4 className="text-sm font-mono text-gray-600 uppercase tracking-widest mb-10 italic">
-              Additional Tools & Paradigms
+          <h4 className="text-sm font-mono text-gray-400 uppercase tracking-widest mb-10 italic">
+            Additional Tools & Paradigms
           </h4>
-          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
             {secondaryStack.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: index * 0.04 }}
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.03 }}
                 viewport={{ once: true }}
-                className="px-5 py-2 bg-gray-900/40 border border-gray-800 rounded-full text-base font-serif italic text-gray-400 hover:text-[#00FF41] hover:border-[#00FF41]/30 transition-all duration-300 cursor-default"
+                className="group/badge relative flex items-center gap-2.5 px-4 py-2.5 bg-gray-900/60 border border-gray-800/80 rounded-2xl hover:border-[#00FF41]/50 hover:bg-black/80 transition-all duration-300 cursor-default shadow-lg backdrop-blur-md"
               >
-                {tech}
-              </motion.span>
+                <span className="text-base group-hover/badge:scale-110 transition-transform duration-300">
+                  {tech.icon}
+                </span>
+                <div className="flex flex-col text-left">
+                  <span className="text-sm font-serif italic text-gray-200 group-hover/badge:text-[#00FF41] transition-colors leading-tight">
+                    {tech.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-gray-500 tracking-wider uppercase">
+                    {tech.category}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -3,25 +3,25 @@
 const testimonials = [
   {
     quote:
-      "Jack is the man! He is simply the best developer I've ever worked with. He took our requirements and quite literally ran with them, translating everything into a high-performance, WCAG-accessible platform. We are beyond happy with the final product and his technical depth.",
-    author: "Jennifer Wilson",
-    role: "Product Manager",
+      "Jack completely rearchitected our LLM serving layer, and the results were immediate and measurable. Our P99 latency dropped from 420ms to 180ms, and our monthly GPU costs decreased by 43% — all while handling 2.5x the request volume. What impressed me most wasn't just the technical execution; it was how Jack documented every architectural decision along the way, turning a black-box optimization into a transparent, maintainable system that my entire team now understands. He's the rare engineer who can operate at the kernel level with eBPF and then explain the entire stack to a product stakeholder with equal clarity. I'd work with him again without hesitation.",
+    author: "Dr. Aisha Mwangi",
+    role: "Head of AI Research, Nairobi Tech Hub",
     // Dark Green Gradient
     bgColor: "from-[#062d2d] to-[#041a1a]"
   },
   {
     quote:
-      "Professional, quick, and a master of infrastructure. Jack was lightning-fast to respond and delivered our fully SEO-optimized ML pipeline ahead of schedule. The integration with our headless CMS was seamless and exactly what we needed. Looking forward to collaborating soon.",
-    author: "Robert Johnson",
-    role: "Founder & CEO",
+      "We brought Jack in to solve a compliance nightmare: building a federated learning system that had to satisfy both GDPR and the EU AI Act while delivering production-grade performance. Jack didn't just deliver a compliant architecture — he built a secure aggregation framework with differential privacy that processed data across 12 geographically distributed silos with less than 5% accuracy tradeoff compared to centralized training. More importantly, Jack became our de facto AI governance advisor. His documentation was so thorough that our legal team actually used it as part of our EU AI Act submission. Jack doesn't just write code; he builds systems that earn regulatory trust.",
+    author: "Michael Chen",
+    role: "Principal ML Engineer, Horizon AI Labs",
     // Dark Purple/Pink Gradient
     bgColor: "from-[#2d0b3d] to-[#1a0624]"
   },
   {
     quote:
-      "Excellent communication and a massive jump in our system performance. Jack handled our additional technical requests with a calm, expert approach. Our Core Web Vitals jumped immediately after deployment. An excellent experience overall.",
-    author: "Tony Parker",
-    role: "Tech Lead",
+      "Jack built our real-time fraud detection system from the ground up — and it's already prevented over $2.7M in fraudulent transactions in its first 90 days of production. What made Jack exceptional wasn't just the 99.2% precision rate of his anomaly detection models; it was his obsession with observability. He instrumented every component with OpenTelemetry and built dashboards that let us debug issues in minutes instead of hours. Our on-call team's MTTR dropped by 78% because of his design. Jack also pushed hard for carbon-aware scheduling, and we've reduced our inference compute emissions by 32% — a win for our bottom line and our sustainability goals. Jack is the kind of engineer who makes you forget about technical risk because you know the system is built right.",
+    author: "Sarah Kimani",
+    role: "CTO, FinSecure Kenya",
     // Dark Blue Gradient
     bgColor: "from-[#0b213d] to-[#061224]"
   },

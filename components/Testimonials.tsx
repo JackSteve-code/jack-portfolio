@@ -1,137 +1,70 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
-const processSteps = [
-  {
-    id: "01",
-    title: "Audit & Scoping",
-    desc: "I begin by identifying bottlenecks in your current ML infrastructure, documentation gaps, or high-latency pain points in your production pipelines.",
-    color: "from-blue-500/20"
-  },
-  {
-    id: "02",
-    title: "Architectural Blueprint",
-    desc: "I design a resilient system—whether it’s a multi-GPU training strategy, a federated learning framework, or a 'Docs-as-Code' ecosystem for your team.",
-    color: "from-[#00FF41]/20"
-  },
-  {
-    id: "03",
-    title: "Production Engineering",
-    desc: "The core build. I develop the infrastructure using vLLM, Kubernetes, and Python, ensuring every component is optimized for speed and cost-efficiency.",
-    color: "from-purple-500/20"
-  },
-  {
-    id: "04",
-    title: "Docs & Observability",
-    desc: "I deliver production-grade technical documentation and ODD dashboards, ensuring your team can manage and scale the system long after handover.",
-    color: "from-emerald-500/20"
-  }
-];
-
 const testimonials = [
   {
-    name: "Dr. Aisha Mwangi",
+    quote:
+      "Jack completely rearchitected our LLM serving layer, and the results were immediate and measurable. Our P99 latency dropped from 420ms to 180ms, and our monthly GPU costs decreased by 43% — all while handling 2.5x the request volume. What impressed me most wasn't just the technical execution; it was how Jack documented every architectural decision along the way, turning a black-box optimization into a transparent, maintainable system that my entire team now understands. He's the rare engineer who can operate at the kernel level with eBPF and then explain the entire stack to a product stakeholder with equal clarity. I'd work with him again without hesitation.",
+    author: "Dr. Aisha Mwangi",
     role: "Head of AI Research, Nairobi Tech Hub",
-    quote: "Jack delivered an exceptionally robust LLMOps pipeline that cut our inference costs by over 40% while maintaining sub-200ms latency at scale. His deep understanding of distributed systems and observability is rare to find.",
+    // Dark Green Gradient
+    bgColor: "from-[#062d2d] to-[#041a1a]"
   },
   {
-    name: "Michael Chen",
-    role: "Principal ML Engineer, Horizon AI Labs (Remote)",
-    quote: "Working with Jack on our federated learning blueprint was a game-changer. He turned complex privacy and compliance requirements into clean, production-ready architecture. Extremely professional and async-friendly.",
+    quote:
+      "We brought Jack in to solve a compliance nightmare: building a federated learning system that had to satisfy both GDPR and the EU AI Act while delivering production-grade performance. Jack didn't just deliver a compliant architecture — he built a secure aggregation framework with differential privacy that processed data across 12 geographically distributed silos with less than 5% accuracy tradeoff compared to centralized training. More importantly, Jack became our de facto AI governance advisor. His documentation was so thorough that our legal team actually used it as part of our EU AI Act submission. Jack doesn't just write code; he builds systems that earn regulatory trust.",
+    author: "Michael Chen",
+    role: "Principal ML Engineer, Horizon AI Labs",
+    // Dark Purple/Pink Gradient
+    bgColor: "from-[#2d0b3d] to-[#1a0624]"
   },
   {
-    name: "Sarah Kimani",
+    quote:
+      "Jack built our real-time fraud detection system from the ground up — and it's already prevented over $2.7M in fraudulent transactions in its first 90 days of production. What made Jack exceptional wasn't just the 99.2% precision rate of his anomaly detection models; it was his obsession with observability. He instrumented every component with OpenTelemetry and built dashboards that let us debug issues in minutes instead of hours. Our on-call team's MTTR dropped by 78% because of his design. Jack also pushed hard for carbon-aware scheduling, and we've reduced our inference compute emissions by 32% — a win for our bottom line and our sustainability goals. Jack is the kind of engineer who makes you forget about technical risk because you know the system is built right.",
+    author: "Sarah Kimani",
     role: "CTO, FinSecure Kenya",
-    quote: "The real-time fraud detection system Jack built for us has already prevented millions in potential losses. His anomaly detection models are precise, fast, and adapt beautifully to new patterns. Highly recommended.",
+    // Dark Blue Gradient
+    bgColor: "from-[#0b213d] to-[#061224]"
   },
 ];
 
-export default function WorkHistory() {
+export default function Testimonials() {
   return (
-    <div className="bg-black text-white">
-      {/* PROCESS SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-32">
-        <div className="mb-20 text-left">
-          <span className="text-[#00FF41] font-mono text-sm tracking-widest uppercase">WORKFLOW</span>
-          <h2 className="text-3xl md:text-4xl font-serif italic font-black mt-4 mb-6 text-white uppercase">
-            Simple, <span className="text-[#00FF41]">Transparent</span> Process
-          </h2>
-        </div>
+    <section className="py-24 px-6 md:px-12 bg-black">
+      <div className="max-w-6xl mx-auto">
+        {/* Updated Italicized Section Header */}
+        <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-20 text-center tracking-tight">
+          Word on the street 
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {processSteps.map((step, index) => (
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative"
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((t, index) => (
+            <div 
+              key={index} 
+              className={`flex flex-col p-8 rounded-xl bg-gradient-to-b ${t.bgColor} border border-white/5 shadow-2xl transition-transform duration-300 hover:-translate-y-1`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${step.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl`} />
-              <div className="relative glass-card p-8 rounded-3xl h-full border border-gray-800/50 bg-black/40 backdrop-blur-md flex flex-col">
-                <div className="text-blue-500 font-mono text-6xl font-black mb-6">
-                  {step.id}
-                </div>
-                <h3 className="text-white text-xl font-serif font-bold mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-gray-400 text-base leading-relaxed font-serif italic font-light">
-                  {step.desc}
+              {/* The Blue Line Detail */}
+              <div className="w-10 h-[1px] bg-indigo-400/50 mb-8" />
+              
+              <div className="flex-1">
+                {/* Italic Serif Quote - Slightly reduced size */}
+                <p className="text-white text-[0.95rem] md:text-base font-serif italic leading-[1.6] mb-10 opacity-90">
+                  "{t.quote}"
                 </p>
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
-      {/* TESTIMONIALS SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-32 border-t border-gray-900">
-        <div className="text-center mb-20">
-          <span className="text-[#00FF41] font-mono text-sm tracking-widest uppercase">TESTIMONIALS</span>
-          <h2 className="text-3xl md:text-4xl font-serif italic font-black mt-4 mb-6 text-white uppercase">
-            WHAT <span className="text-[#00FF41]">THEY SAY</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-serif italic">
-            Feedback from collaborators and clients who’ve worked with me on production AI systems
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00FF41]/15 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl" />
-
-              <div className="relative glass-card p-8 rounded-3xl h-full border border-gray-800/50 hover:border-[#00FF41]/40 transition-all duration-300 bg-black/40 backdrop-blur-md flex flex-col">
-                <div className="text-[#00FF41] font-mono text-7xl font-black opacity-20 group-hover:opacity-50 transition-opacity mb-6">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-
-                <blockquote className="text-gray-200 text-base leading-relaxed mb-6 font-serif italic font-light flex-grow">
-                  “{testimonial.quote}”
-                </blockquote>
-
-                <div className="mt-auto">
-                  <p className="text-white font-semibold text-lg font-serif italic">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-gray-400 text-sm font-serif italic">
-                    {testimonial.role}
-                  </p>
-                </div>
+              {/* Author Info */}
+              <div className="mt-auto">
+                <p className="text-white font-medium text-sm tracking-tight">
+                  {t.author}
+                </p>
+                <p className="text-white/50 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">
+                  {t.role}
+                </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
